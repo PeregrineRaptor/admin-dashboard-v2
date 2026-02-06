@@ -1,0 +1,262 @@
+@import "react-toastify/dist/ReactToastify.css";
+
+$primary_light: #3753a4;
+$primary_main: #21409a;
+$primary_dark: #1e3a8b;
+$secondary_light: #ba68c8;
+$secondary_main: #9c27b0;
+$secondary_dark: #7b1fa2;
+$error_light: #ef333a;
+$error_main: #ed1c24;
+$error_dark: #d51920;
+$warning_light: #fcaa45;
+$warning_main: #fca130;
+$warning_dark: #e3912b;
+$info_light: #0cb6d8;
+$info_main: #0aa2c0;
+$info_dark: #098da8;
+$success_light: #24963e;
+$success_main: #208637;
+$success_dark: #1c7530;
+$border_light: #009900;
+$border_main: #e0e0e0;
+$border_dark: #006600;
+$extend_white: #ffffff;
+* {
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground-rgb));
+  margin: 0;
+}
+
+html {
+  font-family: var(--font-roboto);
+}
+
+body {
+  background-color: #f8f8f8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-poppins);
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+*,
+::before,
+::after {
+  border-width: 0;
+  border-style: solid;
+  border-color: theme("borderColor.DEFAULT", currentColor);
+}
+
+.google-map * {
+  border-style: none;
+}
+
+#nprogress {
+  .bar,
+  .spinner {
+    z-index: 1300000000 !important;
+  }
+}
+.ps {
+  .ps__rail-y {
+    background-color: transparent !important;
+    &:hover {
+      background-color: transparent !important;
+    }
+  }
+  .ps__thumb-y {
+    right: 0;
+  }
+  .ps__rail-x {
+    display: none !important;
+  }
+}
+.rc-scrollbars-track-h {
+  height: 4px !important;
+  bottom: 0px !important;
+}
+.rc-scrollbars-track-v {
+  width: 4px !important;
+  right: 0px !important;
+}
+
+//MuiDrawer-paper
+.logo-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1;
+  width: 100%;
+  a {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+  }
+  svg {
+    color: $extend_white;
+    font-size: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .MuiTypography-root {
+    font-size: 18.5px;
+  }
+}
+.active {
+  .logo-name {
+    svg {
+      color: $warning_main;
+    }
+  }
+}
+.MuiDrawer-docked {
+  .MuiDrawer-paper {
+    overflow: hidden;
+    transition: width linear 0.3s;
+    .logo-name .MuiTypography-root,
+    .logo-name svg,
+    .MuiTreeItem-iconContainer,
+    .MuiTreeItem-label .MuiTypography-root {
+      opacity: 0;
+      transition: all linear 0.3s;
+    }
+  }
+}
+
+.MuiDrawer-modal {
+  .MuiDrawer-paper {
+    width: 260px;
+  }
+}
+.aside-hover,
+.active {
+  .MuiDrawer-docked .MuiDrawer-paper {
+    .logo-name .MuiTypography-root,
+    .logo-name svg,
+    .MuiTreeItem-iconContainer,
+    .MuiTreeItem-label .MuiTypography-root {
+      opacity: 1;
+    }
+  }
+}
+
+.MuiDrawer-paper {
+  background-color: var(--sidebar-bg, #3753a4);
+  padding: 16px 8px;
+  .MuiTreeItem-group {
+    margin-left: 0;
+  }
+  .tree-view-wrapper {
+    margin-top: 20px;
+    height: calc(100vh - 80px);
+    a {
+      cursor: pointer;
+      display: block;
+    }
+    .MuiTreeItem-content {
+      flex-direction: row-reverse;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      border-radius: 4px;
+      .MuiTreeItem-label {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+        font-weight: 600;
+        font-size: 14px;
+        white-space: nowrap;
+        padding-left: 0px;
+        figure {
+          flex-shrink: 0;
+          svg {
+            font-size: 26px;
+            margin: auto;
+          }
+        }
+      }
+      .MuiTreeItem-label,
+      .MuiTreeItem-iconContainer {
+        color: $extend_white;
+      }
+      &:hover {
+        background-color: $primary_dark;
+        p,
+        svg {
+          color: $extend_white;
+        }
+      }
+      &.Mui-selected {
+        background-color: $extend_white;
+        &:hover {
+          background-color: $primary_dark;
+          p,
+          svg {
+            color: $extend_white;
+          }
+        }
+      }
+    }
+  }
+}
